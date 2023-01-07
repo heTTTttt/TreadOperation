@@ -1,9 +1,13 @@
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         PetrolStation petrolStation = new PetrolStation();
         Runnable task1 = petrolStation::doRefuel;
+        ExecutorService executor = Executors.newFixedThreadPool(3);
 
 
 
@@ -11,10 +15,10 @@ public class Main {
         Thread thread2 = new Thread(task1);
         Thread thread3 = new Thread(task1);
         Thread thread4 = new Thread(task1);
-        Thread thread5 = new Thread(task1);
-        Thread thread6 = new Thread(task1);
-        Thread thread7 = new Thread(task1);// створення 2х потоків.
-        Thread thread8 = new Thread(task1);// створення 2х потоків.
+//        Thread thread5 = new Thread(task1);
+//        Thread thread6 = new Thread(task1);
+//        Thread thread7 = new Thread(task1);// створення 2х потоків.
+//        Thread thread8 = new Thread(task1);// створення 2х потоків.
 
         thread1.start();
         thread2.start();
